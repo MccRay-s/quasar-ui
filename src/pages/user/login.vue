@@ -2,6 +2,7 @@
   <q-card class="q-pa-md" style="width: 100%; max-width: 400px;">
     <q-form
       @submit="onLogin"
+      @reset="onReset"
       class="q-gutter-md">
       <q-input
         outlined
@@ -48,7 +49,7 @@
       </div>
       <q-toggle v-model="remember" label="记住密码" />
       <div>
-        <q-btn label="登 录" type="submit" color="primary" style="width: 100px"/>
+        <q-btn label="登 录" type="submit" color="primary" style="width: 120px"/>
         <q-btn label="重 置" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
@@ -79,8 +80,12 @@ export default defineComponent({
         message: 'Submitted',
       });
     }
+    function onReset() {
+      code.value = null;
+      password.value = null;
+    }
     return {
-      code, password, username, uuid, remember, logining, onLogin,
+      code, password, username, uuid, remember, logining, onLogin, onReset,
     };
   },
 });
