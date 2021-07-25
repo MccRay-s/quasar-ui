@@ -7,21 +7,14 @@
 // https://v2.quasar.dev/quasar-cli/quasar-conf-js
 
 /* eslint-env node */
-/* eslint-disable @typescript-eslint/no-var-requires */
+const ESLintPlugin = require('eslint-webpack-plugin');
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 const { configure } = require('quasar/wrappers');
 
 module.exports = configure((ctx) => ({
   // https://v2.quasar.dev/quasar-cli/supporting-ts
-  supportTS: {
-    tsCheckerConfig: {
-      eslint: {
-        enabled: true,
-        files: './src/**/*.{ts,tsx,js,jsx,vue}',
-      },
-    },
-  },
+  supportTS: false,
 
   // https://v2.quasar.dev/quasar-cli/prefetch-feature
   // preFetch: true,
@@ -35,7 +28,7 @@ module.exports = configure((ctx) => ({
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
   css: [
-    'app.sass',
+    'app.scss',
   ],
 
   // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -74,8 +67,9 @@ module.exports = configure((ctx) => ({
 
     // https://v2.quasar.dev/quasar-cli/handling-webpack
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpack(/* chain */) {
-      //
+    chainWebpack(chain) {
+      chain.plugin('eslint-webpack-plugin')
+        .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }]);
     },
   },
 
@@ -84,6 +78,16 @@ module.exports = configure((ctx) => ({
     https: false,
     port: 8080,
     open: true, // opens browser window automatically
+    proxy: {
+      // 将所有以/api开头的请求代理到jsonplaceholder
+      '/api': {
+        target: 'http://vue.ruoyi.vip',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/prod-api',
+        },
+      },
+    },
   },
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -101,7 +105,9 @@ module.exports = configure((ctx) => ({
     // directives: [],
 
     // Quasar plugins
-    plugins: [],
+    plugins: [
+      'Notify',
+    ],
   },
 
   // animations: 'all', // --- includes all animations
@@ -121,8 +127,9 @@ module.exports = configure((ctx) => ({
     maxAge: 1000 * 60 * 60 * 24 * 30,
     // Tell browser when a file from the server should expire from cache (in ms)
 
-    chainWebpackWebserver(/* chain */) {
-      //
+    chainWebpackWebserver(chain) {
+      chain.plugin('eslint-webpack-plugin')
+        .use(ESLintPlugin, [{ extensions: ['js'] }]);
     },
 
     middlewares: [
@@ -138,14 +145,15 @@ module.exports = configure((ctx) => ({
 
     // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
     // if using workbox in InjectManifest mode
-    chainWebpackCustomSW(/* chain */) {
-      //
+    chainWebpackCustomSW(chain) {
+      chain.plugin('eslint-webpack-plugin')
+        .use(ESLintPlugin, [{ extensions: ['js'] }]);
     },
 
     manifest: {
-      name: 'Quasar App',
-      short_name: 'Quasar App',
-      description: 'A Quasar Framework app',
+      name: 'ruoyi-quasar-ui',
+      short_name: 'ruoyi-quasar-ui',
+      description: 'ruoyi-quasar-ui',
       display: 'standalone',
       orientation: 'portrait',
       background_color: '#ffffff',
@@ -214,15 +222,15 @@ module.exports = configure((ctx) => ({
     },
 
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpack(/* chain */) {
-      // do something with the Electron main process Webpack cfg
-      // extendWebpackMain also available besides this chainWebpackMain
+    chainWebpackMain(chain) {
+      chain.plugin('eslint-webpack-plugin')
+        .use(ESLintPlugin, [{ extensions: ['js'] }]);
     },
 
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpackPreload(/* chain */) {
-      // do something with the Electron main process Webpack cfg
-      // extendWebpackPreload also available besides this chainWebpackPreload
+    chainWebpackPreload(chain) {
+      chain.plugin('eslint-webpack-plugin')
+        .use(ESLintPlugin, [{ extensions: ['js'] }]);
     },
   },
 }));

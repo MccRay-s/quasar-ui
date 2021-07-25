@@ -25,7 +25,7 @@
           <q-icon name="lock" />
         </template>
       </q-input>
-      <div class="row">
+      <div class="row justify-between">
         <div class="col-8">
           <q-input
             outlined
@@ -38,12 +38,12 @@
             </template>
           </q-input>
         </div>
-        <div class="col offset-md-1">
-          <q-img
-            height="40px"
-            spinner-color="white"
-            class="rounded-borders"
-            src="https://placeimg.com/500/300/nature"
+        <div class="col" style="margin-left: 22px;">
+          <img
+            @click="getImgCode"
+            height="40"
+            width="101"
+            :src="codeUrl"
           />
         </div>
       </div>
@@ -58,7 +58,8 @@
 
 <script lang="ts">
 import { useQuasar } from 'quasar';
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
+import { getCodeImg, login } from '../../api/login';
 
 export default defineComponent({
   name: 'PageIndex',
@@ -71,22 +72,58 @@ export default defineComponent({
     const uuid = ref(null);
     const remember = ref(false);
     const logining = ref(false);
+    const codeUrl = ref(null);
 
-    function onLogin() {
+    const getImgCode = async () => {
+      const rest = await getCodeImg();
+      codeUrl.value = `data:image/gif;base64,${rest.data.img}`;
+      uuid.value = rest.data.uuid;
+    };
+
+    const onLogin = async () => {
+      logining.value = true;
+      // if (remember.value) {
+      //   Cookies.set('username', this.loginForm.username, { expires: 30 });
+      //   Cookies.set('password', encrypt(this.loginForm.password), { expires: 30 });
+      //   Cookies.set('rememberMe', this.loginForm.rememberMe, { expires: 30 });
+      // } else {
+      //   Cookies.remove('username');
+      //   Cookies.remove('password');
+      //   Cookies.remove('rememberMe');
+      // }
+      // this.$store.dispatch('Login', this.loginForm).then(() => {
+      //   this.$router.push({ path: this.redirect || '/' }).catch(() => {});
+      // }).catch(() => {
+      //   logining.value = false;
+      //   getImgCode();
+      // });
+
+      const rest = await login(username, password, code, uuid);
+
+      console.log(rest);
+
       $q.notify({
         color: 'green-4',
         textColor: 'white',
-        icon: 'cloud_done',
+        icon: 'done',
         message: 'Submitted',
+        position: 'top',
       });
-    }
-    function onReset() {
+    };
+    const onReset = () => {
       code.value = null;
       password.value = null;
-    }
+    };
+
+    getImgCode();
+
+    onMounted(async () => {
+
+    });
     return {
-      code, password, username, uuid, remember, logining, onLogin, onReset,
+      code, password, username, uuid, remember, codeUrl, logining, onLogin, onReset, getImgCode,
     };
   },
+
 });
 </script>

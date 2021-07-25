@@ -1,6 +1,6 @@
-# Quasar App (ruoyi-quasar-ui)
+# ruoyi-quasar-ui (ruoyi-quasar-ui)
 
-A Quasar Framework app
+ruoyi-quasar-ui
 
 ## Install the dependencies
 ```bash

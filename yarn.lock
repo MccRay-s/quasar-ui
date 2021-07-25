@@ -1209,7 +1209,7 @@
     "@types/eslint" "*"
     "@types/estree" "*"
 
-"@types/eslint@*":
+"@types/eslint@*", "@types/eslint@^7.2.6":
   version "7.28.0"
   resolved "https://registry.nlark.com/@types/eslint/download/@types/eslint-7.28.0.tgz#7e41f2481d301c68e14f483fe10b017753ce8d5a"
   integrity sha1-fkHySB0wHGjhT0g/4QsBd1POjVo=
@@ -1268,7 +1268,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/json-schema@*", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.7", "@types/json-schema@^7.0.8":
+"@types/json-schema@*", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8":
   version "7.0.8"
   resolved "https://registry.nlark.com/@types/json-schema/download/@types/json-schema-7.0.8.tgz?cache=0&sync_timestamp=1625608069156&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.8.tgz#edf1bf1dbf4e04413ca8e5b17b3b7d7d54b59818"
   integrity sha1-7fG/Hb9OBEE8qOWxezt9fVS1mBg=
@@ -1279,14 +1279,9 @@
   integrity sha1-k+Jb+e51/g/YC1lLxP6w6GIRG1o=
 
 "@types/node@*":
-  version "16.4.1"
-  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.4.1.tgz#9fad171a5b701613ee8a6f4ece3c88b1034b1b03"
-  integrity sha1-n60XGltwFhPuim9OzjyIsQNLGwM=
-
-"@types/node@^10.17.15":
-  version "10.17.60"
-  resolved "https://registry.nlark.com/@types/node/download/@types/node-10.17.60.tgz#35f3d6213daed95da7f0f73e75bcc6980e90597b"
-  integrity sha1-NfPWIT2u2V2n8Pc+dbzGmA6QWXs=
+  version "16.4.2"
+  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.4.2.tgz?cache=0&sync_timestamp=1627148043482&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.4.2.tgz#0a95d7fd950cb1eaca0ce11031d72e8f680b775a"
+  integrity sha1-CpXX/ZUMserKDOEQMdcuj2gLd1o=
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1382,78 +1377,9 @@
     anymatch "^3.0.0"
     source-map "^0.6.0"
 
-"@typescript-eslint/eslint-plugin@^4.16.1":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.28.4.tgz#e73c8cabbf3f08dee0e1bda65ed4e622ae8f8921"
-  integrity sha1-5zyMq78/CN7g4b2mXtTmIq6PiSE=
-  dependencies:
-    "@typescript-eslint/experimental-utils" "4.28.4"
-    "@typescript-eslint/scope-manager" "4.28.4"
-    debug "^4.3.1"
-    functional-red-black-tree "^1.0.1"
-    regexpp "^3.1.0"
-    semver "^7.3.5"
-    tsutils "^3.21.0"
-
-"@typescript-eslint/experimental-utils@4.28.4":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.28.4.tgz#9c70c35ebed087a5c70fb0ecd90979547b7fec96"
-  integrity sha1-nHDDXr7Qh6XHD7Ds2Ql5VHt/7JY=
-  dependencies:
-    "@types/json-schema" "^7.0.7"
-    "@typescript-eslint/scope-manager" "4.28.4"
-    "@typescript-eslint/types" "4.28.4"
-    "@typescript-eslint/typescript-estree" "4.28.4"
-    eslint-scope "^5.1.1"
-    eslint-utils "^3.0.0"
-
-"@typescript-eslint/parser@^4.16.1":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/parser/download/@typescript-eslint/parser-4.28.4.tgz#bc462dc2779afeefdcf49082516afdc3e7b96fab"
-  integrity sha1-vEYtwnea/u/c9JCCUWr9w+e5b6s=
-  dependencies:
-    "@typescript-eslint/scope-manager" "4.28.4"
-    "@typescript-eslint/types" "4.28.4"
-    "@typescript-eslint/typescript-estree" "4.28.4"
-    debug "^4.3.1"
-
-"@typescript-eslint/scope-manager@4.28.4":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.28.4.tgz#bdbce9b6a644e34f767bd68bc17bb14353b9fe7f"
-  integrity sha1-vbzptqZE4092e9aLwXuxQ1O5/n8=
-  dependencies:
-    "@typescript-eslint/types" "4.28.4"
-    "@typescript-eslint/visitor-keys" "4.28.4"
-
-"@typescript-eslint/types@4.28.4":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/types/download/@typescript-eslint/types-4.28.4.tgz?cache=0&sync_timestamp=1626715053397&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40typescript-eslint%2Ftypes%2Fdownload%2F%40typescript-eslint%2Ftypes-4.28.4.tgz#41acbd79b5816b7c0dd7530a43d97d020d3aeb42"
-  integrity sha1-Qay9ebWBa3wN11MKQ9l9Ag0660I=
-
-"@typescript-eslint/typescript-estree@4.28.4":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.28.4.tgz?cache=0&sync_timestamp=1626715344839&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-4.28.4.tgz#252e6863278dc0727244be9e371eb35241c46d00"
-  integrity sha1-JS5oYyeNwHJyRL6eNx6zUkHEbQA=
-  dependencies:
-    "@typescript-eslint/types" "4.28.4"
-    "@typescript-eslint/visitor-keys" "4.28.4"
-    debug "^4.3.1"
-    globby "^11.0.3"
-    is-glob "^4.0.1"
-    semver "^7.3.5"
-    tsutils "^3.21.0"
-
-"@typescript-eslint/visitor-keys@4.28.4":
-  version "4.28.4"
-  resolved "https://registry.nlark.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.28.4.tgz?cache=0&sync_timestamp=1626715052353&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40typescript-eslint%2Fvisitor-keys%2Fdownload%2F%40typescript-eslint%2Fvisitor-keys-4.28.4.tgz#92dacfefccd6751cbb0a964f06683bfd72d0c4d3"
-  integrity sha1-ktrP78zWdRy7CpZPBmg7/XLQxNM=
-  dependencies:
-    "@typescript-eslint/types" "4.28.4"
-    eslint-visitor-keys "^2.0.0"
-
 "@vue/compiler-core@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/compiler-core/download/@vue/compiler-core-3.1.5.tgz#298f905b6065d6d81ff63756f98c60876b393c87"
+  resolved "https://registry.nlark.com/@vue/compiler-core/download/@vue/compiler-core-3.1.5.tgz?cache=0&sync_timestamp=1627082441238&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-core%2Fdownload%2F%40vue%2Fcompiler-core-3.1.5.tgz#298f905b6065d6d81ff63756f98c60876b393c87"
   integrity sha1-KY+QW2Bl1tgf9jdW+Yxgh2s5PIc=
   dependencies:
     "@babel/parser" "^7.12.0"
@@ -1464,7 +1390,7 @@
 
 "@vue/compiler-dom@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/compiler-dom/download/@vue/compiler-dom-3.1.5.tgz#cbb97020c62a5faa3fbc2a97916bd98041ac9856"
+  resolved "https://registry.nlark.com/@vue/compiler-dom/download/@vue/compiler-dom-3.1.5.tgz?cache=0&sync_timestamp=1627082441499&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-dom%2Fdownload%2F%40vue%2Fcompiler-dom-3.1.5.tgz#cbb97020c62a5faa3fbc2a97916bd98041ac9856"
   integrity sha1-y7lwIMYqX6o/vCqXkWvZgEGsmFY=
   dependencies:
     "@vue/compiler-core" "3.1.5"
@@ -1472,7 +1398,7 @@
 
 "@vue/compiler-sfc@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/compiler-sfc/download/@vue/compiler-sfc-3.1.5.tgz#e61e54f3a963b0f4a8e523fbb8632390dc52b0d6"
+  resolved "https://registry.nlark.com/@vue/compiler-sfc/download/@vue/compiler-sfc-3.1.5.tgz?cache=0&sync_timestamp=1627082249929&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-sfc%2Fdownload%2F%40vue%2Fcompiler-sfc-3.1.5.tgz#e61e54f3a963b0f4a8e523fbb8632390dc52b0d6"
   integrity sha1-5h5U86ljsPSo5SP7uGMjkNxSsNY=
   dependencies:
     "@babel/parser" "^7.13.9"
@@ -1495,7 +1421,7 @@
 
 "@vue/compiler-ssr@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/compiler-ssr/download/@vue/compiler-ssr-3.1.5.tgz#f068652774293256a1e53084bed48a67682df9d2"
+  resolved "https://registry.nlark.com/@vue/compiler-ssr/download/@vue/compiler-ssr-3.1.5.tgz?cache=0&sync_timestamp=1627083039873&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-ssr%2Fdownload%2F%40vue%2Fcompiler-ssr-3.1.5.tgz#f068652774293256a1e53084bed48a67682df9d2"
   integrity sha1-8GhlJ3QpMlah5TCEvtSKZ2gt+dI=
   dependencies:
     "@vue/compiler-dom" "3.1.5"
@@ -1508,14 +1434,14 @@
 
 "@vue/reactivity@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.1.5.tgz?cache=0&sync_timestamp=1626903991297&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.1.5.tgz#dbec4d9557f7c8f25c2635db1e23a78a729eb991"
+  resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.1.5.tgz#dbec4d9557f7c8f25c2635db1e23a78a729eb991"
   integrity sha1-2+xNlVf3yPJcJjXbHiOninKeuZE=
   dependencies:
     "@vue/shared" "3.1.5"
 
 "@vue/runtime-core@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/runtime-core/download/@vue/runtime-core-3.1.5.tgz?cache=0&sync_timestamp=1626903992351&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-core%2Fdownload%2F%40vue%2Fruntime-core-3.1.5.tgz#a545b7f146092929cb5e833e85439150f17ac87b"
+  resolved "https://registry.nlark.com/@vue/runtime-core/download/@vue/runtime-core-3.1.5.tgz#a545b7f146092929cb5e833e85439150f17ac87b"
   integrity sha1-pUW38UYJKSnLXoM+hUORUPF6yHs=
   dependencies:
     "@vue/reactivity" "3.1.5"
@@ -1523,7 +1449,7 @@
 
 "@vue/runtime-dom@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/runtime-dom/download/@vue/runtime-dom-3.1.5.tgz#4fa28947d408aa368fa17ea0edc1beb9af1472a1"
+  resolved "https://registry.nlark.com/@vue/runtime-dom/download/@vue/runtime-dom-3.1.5.tgz?cache=0&sync_timestamp=1627083039109&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.1.5.tgz#4fa28947d408aa368fa17ea0edc1beb9af1472a1"
   integrity sha1-T6KJR9QIqjaPoX6g7cG+ua8UcqE=
   dependencies:
     "@vue/runtime-core" "3.1.5"
@@ -1532,7 +1458,7 @@
 
 "@vue/server-renderer@3.1.5":
   version "3.1.5"
-  resolved "https://registry.nlark.com/@vue/server-renderer/download/@vue/server-renderer-3.1.5.tgz?cache=0&sync_timestamp=1626903995575&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fserver-renderer%2Fdownload%2F%40vue%2Fserver-renderer-3.1.5.tgz#905454eccbb97bb8daafc5db6eec83c452062648"
+  resolved "https://registry.nlark.com/@vue/server-renderer/download/@vue/server-renderer-3.1.5.tgz#905454eccbb97bb8daafc5db6eec83c452062648"
   integrity sha1-kFRU7Mu5e7jar8XbbuyDxFIGJkg=
   dependencies:
     "@vue/compiler-ssr" "3.1.5"
@@ -1860,6 +1786,11 @@ array.prototype.flat@^1.2.4:
     define-properties "^1.1.3"
     es-abstract "^1.18.0-next.1"
 
+arrify@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.nlark.com/arrify/download/arrify-2.0.1.tgz?cache=0&sync_timestamp=1619599497996&other_urls=https%3A%2F%2Fregistry.nlark.com%2Farrify%2Fdownload%2Farrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
+  integrity sha1-yWVekzHgq81YjSp8rX6ZVvZnAfo=
+
 astral-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/astral-regex/download/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
@@ -2160,9 +2091,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001243:
-  version "1.0.30001246"
-  resolved "https://registry.nlark.com/caniuse-lite/download/caniuse-lite-1.0.30001246.tgz?cache=0&sync_timestamp=1626846597028&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001246.tgz#fe17d9919f87124d6bb416ef7b325356d69dc76c"
-  integrity sha1-/hfZkZ+HEk1rtBbvezJTVtadx2w=
+  version "1.0.30001247"
+  resolved "https://registry.nlark.com/caniuse-lite/download/caniuse-lite-1.0.30001247.tgz#105be7a8fb30cdd303275e769a9dfb87d4b3577a"
+  integrity sha1-EFvnqPswzdMDJ152mp37h9SzV3o=
 
 chalk@4.1.1, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
   version "4.1.1"
@@ -2511,9 +2442,9 @@ css-color-names@^1.0.1:
   integrity sha1-b/fugagjrUbgIPov1qtAqIfiumc=
 
 css-declaration-sorter@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.nlark.com/css-declaration-sorter/download/css-declaration-sorter-6.0.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcss-declaration-sorter%2Fdownload%2Fcss-declaration-sorter-6.0.3.tgz#9dfd8ea0df4cc7846827876fafb52314890c21a9"
-  integrity sha1-nf2OoN9Mx4RoJ4dvr7UjFIkMIak=
+  version "6.1.1"
+  resolved "https://registry.nlark.com/css-declaration-sorter/download/css-declaration-sorter-6.1.1.tgz#77b32b644ba374bc562c0fc6f4fdaba4dfb0b749"
+  integrity sha1-d7MrZEujdLxWLA/G9P2rpN+wt0k=
   dependencies:
     timsort "^0.3.0"
 
@@ -2660,7 +2591,7 @@ debug@^3.1.1, debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1:
+debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.3.2"
   resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz?cache=0&sync_timestamp=1625374675284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdebug%2Fdownload%2Fdebug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
@@ -2890,9 +2821,9 @@ electron-osx-sign@^0.4.11:
     plist "^3.0.1"
 
 electron-to-chromium@^1.3.723:
-  version "1.3.785"
-  resolved "https://registry.nlark.com/electron-to-chromium/download/electron-to-chromium-1.3.785.tgz?cache=0&sync_timestamp=1626991455045&other_urls=https%3A%2F%2Fregistry.nlark.com%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.785.tgz#79f546c69a6be4f30913aaace361bc746f26df48"
-  integrity sha1-efVGxppr5PMJE6qs42G8dG8m30g=
+  version "1.3.786"
+  resolved "https://registry.nlark.com/electron-to-chromium/download/electron-to-chromium-1.3.786.tgz#1fc572abc77e2f474725f8a61acf7e25ced9fbe2"
+  integrity sha1-H8Vyq8d+L0dHJfimGs9+Jc7Z++I=
 
 elementtree@0.1.7:
   version "0.1.7"
@@ -3097,7 +3028,7 @@ eslint-plugin-vue@^7.0.0:
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"
-  resolved "https://registry.npm.taobao.org/eslint-scope/download/eslint-scope-5.1.1.tgz?cache=0&sync_timestamp=1599933651660&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-scope%2Fdownload%2Feslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
+  resolved "https://registry.nlark.com/eslint-scope/download/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
   integrity sha1-54blmmbLkrP2wfsNUIqrF0hI9Iw=
   dependencies:
     esrecurse "^4.3.0"
@@ -3110,13 +3041,6 @@ eslint-utils@^2.1.0:
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
-eslint-utils@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.nlark.com/eslint-utils/download/eslint-utils-3.0.0.tgz#8aebaface7345bb33559db0a1f13a1d2d48c3672"
-  integrity sha1-iuuvrOc0W7M1WdsKHxOh0tSMNnI=
-  dependencies:
-    eslint-visitor-keys "^2.0.0"
-
 eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3.0:
   version "1.3.0"
   resolved "https://registry.nlark.com/eslint-visitor-keys/download/eslint-visitor-keys-1.3.0.tgz#30ebd1ef7c2fdff01c3a4f151044af25fab0523e"
@@ -3126,6 +3050,18 @@ eslint-visitor-keys@^2.0.0, eslint-visitor-keys@^2.1.0:
   version "2.1.0"
   resolved "https://registry.nlark.com/eslint-visitor-keys/download/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha1-9lMoJZMFknOSyTjtROsKXJsr0wM=
+
+eslint-webpack-plugin@^2.4.0:
+  version "2.5.4"
+  resolved "https://registry.nlark.com/eslint-webpack-plugin/download/eslint-webpack-plugin-2.5.4.tgz?cache=0&sync_timestamp=1626801035328&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-webpack-plugin%2Fdownload%2Feslint-webpack-plugin-2.5.4.tgz#473b84932f1a8e2c2b8e66a402d0497bf440b986"
+  integrity sha1-RzuEky8ajiwrjmakAtBJe/RAuYY=
+  dependencies:
+    "@types/eslint" "^7.2.6"
+    arrify "^2.0.1"
+    jest-worker "^26.6.2"
+    micromatch "^4.0.2"
+    normalize-path "^3.0.0"
+    schema-utils "^3.0.0"
 
 eslint@^7.14.0:
   version "7.31.0"
@@ -3459,7 +3395,7 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0:
 
 fork-ts-checker-webpack-plugin@6.1.0:
   version "6.1.0"
-  resolved "https://registry.nlark.com/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-6.1.0.tgz#7581a6ccd7cbbed9ecce3de64fb1f599d7a2990b"
+  resolved "https://registry.nlark.com/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-6.1.0.tgz?cache=0&sync_timestamp=1627082614932&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffork-ts-checker-webpack-plugin%2Fdownload%2Ffork-ts-checker-webpack-plugin-6.1.0.tgz#7581a6ccd7cbbed9ecce3de64fb1f599d7a2990b"
   integrity sha1-dYGmzNfLvtnszj3mT7H1mdeimQs=
   dependencies:
     "@babel/code-frame" "^7.8.3"
@@ -3621,7 +3557,7 @@ glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
 
 global-agent@^2.0.2:
   version "2.2.0"
-  resolved "https://registry.npm.taobao.org/global-agent/download/global-agent-2.2.0.tgz?cache=0&sync_timestamp=1617335634101&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fglobal-agent%2Fdownload%2Fglobal-agent-2.2.0.tgz#566331b0646e6bf79429a16877685c4a1fbf76dc"
+  resolved "https://registry.nlark.com/global-agent/download/global-agent-2.2.0.tgz?cache=0&sync_timestamp=1627082437079&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fglobal-agent%2Fdownload%2Fglobal-agent-2.2.0.tgz#566331b0646e6bf79429a16877685c4a1fbf76dc"
   integrity sha1-VmMxsGRua/eUKaFod2hcSh+/dtw=
   dependencies:
     boolean "^3.0.1"
@@ -3675,7 +3611,7 @@ globby@^11.0.1, globby@^11.0.3:
 
 got@^9.6.0:
   version "9.6.0"
-  resolved "https://registry.nlark.com/got/download/got-9.6.0.tgz#edf45e7d67f99545705de1f7bbeeeb121765ed85"
+  resolved "https://registry.nlark.com/got/download/got-9.6.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgot%2Fdownload%2Fgot-9.6.0.tgz#edf45e7d67f99545705de1f7bbeeeb121765ed85"
   integrity sha1-7fRefWf5lUVwXeH3u+7rEhdl7YU=
   dependencies:
     "@sindresorhus/is" "^0.14.0"
@@ -4240,6 +4176,15 @@ javascript-stringify@^2.0.1:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/javascript-stringify/download/javascript-stringify-2.1.0.tgz#27c76539be14d8bd128219a2d731b09337904e79"
   integrity sha1-J8dlOb4U2L0Sghmi1zGwkzeQTnk=
+
+jest-worker@^26.6.2:
+  version "26.6.2"
+  resolved "https://registry.nlark.com/jest-worker/download/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
+  integrity sha1-f3LLxNZDw2Xie5/XdfnQ6qnHqO0=
+  dependencies:
+    "@types/node" "*"
+    merge-stream "^2.0.0"
+    supports-color "^7.0.0"
 
 jest-worker@^27.0.2:
   version "27.0.6"
@@ -5146,7 +5091,7 @@ p-locate@^5.0.0:
 
 p-map@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.nlark.com/p-map/download/p-map-4.0.0.tgz#bb2f95a5eda2ec168ec9274e06a747c3e2904d2b"
+  resolved "https://registry.nlark.com/p-map/download/p-map-4.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fp-map%2Fdownload%2Fp-map-4.0.0.tgz#bb2f95a5eda2ec168ec9274e06a747c3e2904d2b"
   integrity sha1-uy+Vpe2i7BaOySdOBqdHw+KQTSs=
   dependencies:
     aggregate-error "^3.0.0"
@@ -5798,7 +5743,7 @@ regenerator-runtime@^0.13.4:
 
 regenerator-transform@^0.14.2:
   version "0.14.5"
-  resolved "https://registry.npm.taobao.org/regenerator-transform/download/regenerator-transform-0.14.5.tgz#c98da154683671c9c4dcb16ece736517e1b7feb4"
+  resolved "https://registry.nlark.com/regenerator-transform/download/regenerator-transform-0.14.5.tgz?cache=0&sync_timestamp=1627057502723&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fregenerator-transform%2Fdownload%2Fregenerator-transform-0.14.5.tgz#c98da154683671c9c4dcb16ece736517e1b7feb4"
   integrity sha1-yY2hVGg2ccnE3LFuznNlF+G3/rQ=
   dependencies:
     "@babel/runtime" "^7.8.4"
@@ -6415,7 +6360,7 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-supports-color@^7.1.0:
+supports-color@^7.0.0, supports-color@^7.1.0:
   version "7.2.0"
   resolved "https://registry.nlark.com/supports-color/download/supports-color-7.2.0.tgz?cache=0&sync_timestamp=1626703414084&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
   integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
@@ -6579,11 +6524,6 @@ tsconfig-paths@^3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1:
-  version "1.14.1"
-  resolved "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
-  integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
-
 tslib@^2.0.3:
   version "2.3.0"
   resolved "https://registry.nlark.com/tslib/download/tslib-2.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
@@ -6593,13 +6533,6 @@ tslib@~2.1.0:
   version "2.1.0"
   resolved "https://registry.nlark.com/tslib/download/tslib-2.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
-
-tsutils@^3.21.0:
-  version "3.21.0"
-  resolved "https://registry.npm.taobao.org/tsutils/download/tsutils-3.21.0.tgz?cache=0&sync_timestamp=1615138184534&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftsutils%2Fdownload%2Ftsutils-3.21.0.tgz#b48717d394cea6c1e096983eed58e9d61715b623"
-  integrity sha1-tIcX05TOpsHglpg+7Vjp1hcVtiM=
-  dependencies:
-    tslib "^1.8.1"
 
 tunnel@^0.0.6:
   version "0.0.6"
@@ -6817,7 +6750,7 @@ vue-style-loader@4.1.3:
 
 vue@3.1.5:
   version "3.1.5"
-  resolved "https://registry.nlark.com/vue/download/vue-3.1.5.tgz#12879b11d0685ee4478c8869551799630a52f9fe"
+  resolved "https://registry.nlark.com/vue/download/vue-3.1.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue%2Fdownload%2Fvue-3.1.5.tgz#12879b11d0685ee4478c8869551799630a52f9fe"
   integrity sha1-EoebEdBoXuRHjIhpVReZYwpS+f4=
   dependencies:
     "@vue/compiler-dom" "3.1.5"
