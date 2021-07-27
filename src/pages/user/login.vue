@@ -60,6 +60,7 @@
 import { useQuasar } from 'quasar';
 import { defineComponent, ref, onMounted } from 'vue';
 import { getCodeImg, login } from '../../api/login';
+import { encrypt, decrypt } from '../../utils/jsencrypt';
 
 export default defineComponent({
   name: 'PageIndex',
@@ -80,33 +81,39 @@ export default defineComponent({
       uuid.value = rest.data.uuid;
     };
 
+    const getCookie = () => {
+      const uname = $q.cookies.get('username');
+      const pwd = $q.cookies.get('password');
+      const rememberMe = $q.cookies.get('rememberMe');
+      if (uname) {
+        username.value = uname;
+      }
+      if (pwd) {
+        password.value = decrypt(pwd);
+      }
+      if (rememberMe === undefined) {
+        remember.value = Boolean(rememberMe);
+      }
+    };
+
     const onLogin = async () => {
       logining.value = true;
-      // if (remember.value) {
-      //   Cookies.set('username', this.loginForm.username, { expires: 30 });
-      //   Cookies.set('password', encrypt(this.loginForm.password), { expires: 30 });
-      //   Cookies.set('rememberMe', this.loginForm.rememberMe, { expires: 30 });
-      // } else {
-      //   Cookies.remove('username');
-      //   Cookies.remove('password');
-      //   Cookies.remove('rememberMe');
-      // }
-      // this.$store.dispatch('Login', this.loginForm).then(() => {
-      //   this.$router.push({ path: this.redirect || '/' }).catch(() => {});
-      // }).catch(() => {
-      //   logining.value = false;
-      //   getImgCode();
-      // });
-
-      const rest = await login(username, password, code, uuid);
-
+      if (remember.value) {
+        const enpass = encrypt(password.value) || '';
+        $q.cookies.set('username', username.value, { expires: 30 });
+        $q.cookies.set('password', enpass, { expires: 30 });
+        $q.cookies.set('rememberMe', remember.value.toString(), { expires: 30 });
+      } else {
+        $q.cookies.remove('username');
+        $q.cookies.remove('password');
+        $q.cookies.remove('rememberMe');
+      }
+      const rest = await login(username.value, password.value, code.value, uuid.value);
       console.log(rest);
-
       $q.notify({
-        color: 'green-4',
-        textColor: 'white',
+        type: 'positive',
         icon: 'done',
-        message: 'Submitted',
+        message: '登录成功',
         position: 'top',
       });
     };
@@ -116,6 +123,8 @@ export default defineComponent({
     };
 
     getImgCode();
+
+    getCookie();
 
     onMounted(async () => {
 

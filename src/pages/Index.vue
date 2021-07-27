@@ -9,9 +9,18 @@
 </template>
 
 <script>
+import { useQuasar } from 'quasar';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'PageIndex',
+  setup() {
+    const $q = useQuasar();
+    $q.notify({
+      type: 'negative',
+      message: 'Submitted',
+      position: 'top',
+    });
+  },
 });
 </script>

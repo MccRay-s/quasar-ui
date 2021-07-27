@@ -1,3 +1,8 @@
+const path = require('path');
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 /*
  * This file runs in a Node context (it's NOT transpiled by Babel), so use only
  * the ES6 features that are supported by your Node version. https://node.green/
@@ -89,6 +94,11 @@ module.exports = configure((ctx) => ({
       },
     },
   },
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set('@', resolve('src'));
+    // 需要重启 IDE
+  },
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
   framework: {
@@ -107,6 +117,7 @@ module.exports = configure((ctx) => ({
     // Quasar plugins
     plugins: [
       'Notify',
+      'Cookies',
     ],
   },
 
