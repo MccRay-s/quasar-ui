@@ -1,8 +1,8 @@
 const path = require('path');
 
-function resolve(dir) {
-  return path.join(__dirname, dir);
-}
+// function resolve(dir) {
+//   return path.join(__dirname, dir);
+// }
 /*
  * This file runs in a Node context (it's NOT transpiled by Babel), so use only
  * the ES6 features that are supported by your Node version. https://node.green/
@@ -75,6 +75,8 @@ module.exports = configure((ctx) => ({
     chainWebpack(chain) {
       chain.plugin('eslint-webpack-plugin')
         .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }]);
+      chain.resolve.alias
+        .set('@', path.resolve(__dirname, './src'));
     },
   },
 
@@ -94,11 +96,23 @@ module.exports = configure((ctx) => ({
       },
     },
   },
-  chainWebpack: (config) => {
-    config.resolve.alias
-      .set('@', resolve('src'));
-    // 需要重启 IDE
-  },
+
+  // extendWebpack(cfg) {
+  //   cfg.resolve.alias = {
+  //     ...cfg.resolve.alias, // This adds the existing alias
+  //     // Add your own alias like this
+  //     api: path.resolve(__dirname, './src/api'),
+  //     statics: path.resolve(__dirname, './src/statics'),
+  //     utils: path.resolve(__dirname, './src/utils'),
+  //     '@': path.resolve(__dirname, './src'),
+  //   };
+  //   cfg.module.rules.push({
+  //     enforce: 'pre',
+  //     test: /\.(js|vue)$/,
+  //     loader: 'eslint-loader',
+  //     exclude: /(node_modules|quasar)/,
+  //   });
+  // },
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
   framework: {

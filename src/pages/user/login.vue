@@ -59,8 +59,8 @@
 <script lang="ts">
 import { useQuasar } from 'quasar';
 import { defineComponent, ref, onMounted } from 'vue';
-import { getCodeImg, login } from '../../api/login';
-import { encrypt, decrypt } from '../../utils/jsencrypt';
+import { getCodeImg, login } from '@/api/login';
+import { encrypt, decrypt } from '@/utils/jsencrypt';
 
 export default defineComponent({
   name: 'PageIndex',
@@ -108,14 +108,19 @@ export default defineComponent({
         $q.cookies.remove('password');
         $q.cookies.remove('rememberMe');
       }
-      const rest = await login(username.value, password.value, code.value, uuid.value);
-      console.log(rest);
-      $q.notify({
-        type: 'positive',
-        icon: 'done',
-        message: '登录成功',
-        position: 'top',
-      });
+      try {
+        const rest = await login(username.value, password.value, code.value, uuid.value);
+        console.log(rest);
+        $q.notify({
+          type: 'positive',
+          icon: 'done',
+          message: '登录成功',
+          position: 'top',
+        });
+      } catch (err) {
+        logining.value = false;
+        getImgCode();
+      }
     };
     const onReset = () => {
       code.value = null;
