@@ -66,7 +66,6 @@ export default defineComponent({
   name: 'PageIndex',
   setup() {
     const $q = useQuasar();
-
     const code = ref(null);
     const password = ref(null);
     const username = ref(null);
@@ -81,6 +80,9 @@ export default defineComponent({
       uuid.value = rest.data.uuid;
     };
 
+    /**
+     * 加载账号密码
+     */
     const getCookie = () => {
       const uname = $q.cookies.get('username');
       const pwd = $q.cookies.get('password');
@@ -95,7 +97,9 @@ export default defineComponent({
         remember.value = Boolean(rememberMe);
       }
     };
-
+    /**
+     * 处理登录
+     */
     const onLogin = async () => {
       logining.value = true;
       if (remember.value) {
