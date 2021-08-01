@@ -74,6 +74,9 @@ export default defineComponent({
     const logining = ref(false);
     const codeUrl = ref(null);
 
+    /**
+     * 获取验证码
+     */
     const getImgCode = async () => {
       const rest = await getCodeImg();
       codeUrl.value = `data:image/gif;base64,${rest.data.img}`;
