@@ -73,7 +73,6 @@ export default defineComponent({
     const remember = ref(false);
     const logining = ref(false);
     const codeUrl = ref(null);
-
     /**
      * 获取验证码
      */
