@@ -1,5 +1,3 @@
-const path = require('path');
-
 /*
  * This file runs in a Node context (it's NOT transpiled by Babel), so use only
  * the ES6 features that are supported by your Node version. https://node.green/
@@ -9,14 +7,22 @@ const path = require('path');
 // https://v2.quasar.dev/quasar-cli/quasar-conf-js
 
 /* eslint-env node */
-const ESLintPlugin = require('eslint-webpack-plugin');
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 const { configure } = require('quasar/wrappers');
+// const path = require('path');
 
 module.exports = configure((ctx) => ({
   // https://v2.quasar.dev/quasar-cli/supporting-ts
-  supportTS: false,
+  supportTS: {
+    tsCheckerConfig: {
+      eslint: {
+        enabled: true,
+        files: './src/**/*.{ts,tsx,js,jsx,vue}',
+      },
+    },
+  },
 
   // https://v2.quasar.dev/quasar-cli/prefetch-feature
   // preFetch: true,
@@ -25,7 +31,7 @@ module.exports = configure((ctx) => ({
   // --> boot files are part of "main.js"
   // https://v2.quasar.dev/quasar-cli/boot-files
   boot: [
-    'axios',
+    // 'axios',
   ],
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -69,18 +75,20 @@ module.exports = configure((ctx) => ({
 
     // https://v2.quasar.dev/quasar-cli/handling-webpack
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpack(chain) {
-      chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }]);
-      chain.resolve.alias
-        .set('@', path.resolve(__dirname, './src'));
+    chainWebpack(/** chain */) {
+      // chain.resolve.alias = {
+      //   ...chain.resolve.alias, // This adds the existing alias
+      //   // Add your own alias like this
+      //   utils: path.resolve(__dirname, './src/utils'),
+      // };
+      // chain.resolve.alias.set('utils', path.resolve(__dirname, './src/utils'));
     },
   },
 
   // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
   devServer: {
     https: false,
-    port: 8080,
+    port: 9080,
     open: true, // opens browser window automatically
     proxy: {
       // 将所有以/api开头的请求代理到jsonplaceholder
@@ -93,23 +101,6 @@ module.exports = configure((ctx) => ({
       },
     },
   },
-
-  // extendWebpack(cfg) {
-  //   cfg.resolve.alias = {
-  //     ...cfg.resolve.alias, // This adds the existing alias
-  //     // Add your own alias like this
-  //     api: path.resolve(__dirname, './src/api'),
-  //     statics: path.resolve(__dirname, './src/statics'),
-  //     utils: path.resolve(__dirname, './src/utils'),
-  //     '@': path.resolve(__dirname, './src'),
-  //   };
-  //   cfg.module.rules.push({
-  //     enforce: 'pre',
-  //     test: /\.(js|vue)$/,
-  //     loader: 'eslint-loader',
-  //     exclude: /(node_modules|quasar)/,
-  //   });
-  // },
 
   // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
   framework: {
@@ -129,6 +120,7 @@ module.exports = configure((ctx) => ({
     plugins: [
       'Notify',
       'Cookies',
+      'LoadingBar',
     ],
   },
 
@@ -149,9 +141,8 @@ module.exports = configure((ctx) => ({
     maxAge: 1000 * 60 * 60 * 24 * 30,
     // Tell browser when a file from the server should expire from cache (in ms)
 
-    chainWebpackWebserver(chain) {
-      chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+    chainWebpackWebserver(/* chain */) {
+      //
     },
 
     middlewares: [
@@ -167,9 +158,8 @@ module.exports = configure((ctx) => ({
 
     // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
     // if using workbox in InjectManifest mode
-    chainWebpackCustomSW(chain) {
-      chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+    chainWebpackCustomSW(/* chain */) {
+      //
     },
 
     manifest: {
@@ -244,15 +234,15 @@ module.exports = configure((ctx) => ({
     },
 
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpackMain(chain) {
-      chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+    chainWebpack(/* chain */) {
+      // do something with the Electron main process Webpack cfg
+      // extendWebpackMain also available besides this chainWebpackMain
     },
 
     // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-    chainWebpackPreload(chain) {
-      chain.plugin('eslint-webpack-plugin')
-        .use(ESLintPlugin, [{ extensions: ['js'] }]);
+    chainWebpackPreload(/* chain */) {
+      // do something with the Electron main process Webpack cfg
+      // extendWebpackPreload also available besides this chainWebpackPreload
     },
   },
 }));

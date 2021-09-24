@@ -1,26 +1,53 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="row items-center justify-evenly">
+    <example-component
+      title="Example component"
+      active
+      :todos="todos"
+      :meta="meta"
+    ></example-component>
   </q-page>
 </template>
 
-<script>
-import { useQuasar } from 'quasar';
-import { defineComponent } from 'vue';
+<script lang="ts">
+import { Todo, Meta } from 'components/models';
+import ExampleComponent from 'components/CompositionComponent.vue';
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'PageIndex',
+  components: { ExampleComponent },
   setup() {
-    const $q = useQuasar();
-    $q.notify({
-      type: 'negative',
-      message: 'Submitted',
-      position: 'top',
+    const todos = ref<Todo[]>([
+      {
+        id: 1,
+        content: 'ct1',
+      },
+      {
+        id: 2,
+        content: 'ct2',
+      },
+      {
+        id: 3,
+        content: 'ct3',
+      },
+      {
+        id: 4,
+        content: 'ct4',
+      },
+      {
+        id: 5,
+        content: 'ct5',
+      },
+    ]);
+    const meta = ref<Meta>({
+      totalCount: 1200,
     });
+    onMounted(async () => {
+      // eslint-disable-next-line no-console
+      // console.log(captchaImage);
+    });
+    return { todos, meta };
   },
 });
 </script>
